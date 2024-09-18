@@ -16,6 +16,15 @@ content-type: application/json
 }
 
 ###
+POST http://localhost:3000/boards HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Board 3",
+    "description": "Description 3"
+}
+
+###
 GET http://localhost:3000/boards
 
 ###
@@ -25,10 +34,10 @@ GET http://localhost:3000/boards/1
 GET http://localhost:3000/boards/2
 
 ###
-DELETE http://localhost:3000/boards/4
+DELETE http://localhost:3000/boards/3
 
 ###
-PATCH  http://localhost:3000/boards/adfa4b20-7580-11ef-b9e2-b3ab5454307a/status
+PATCH  http://localhost:3000/boards/2/status
 content-type: application/json
 
 {
