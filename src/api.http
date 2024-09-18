@@ -1,4 +1,9 @@
 ###
+POST http://localhost:3000/auth/test HTTP/1.1
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocGFpazIiLCJpYXQiOjE3MjY2Njc0ODYsImV4cCI6MTcyNjY3MTA4Nn0.4KASVHmzHlWijkh4YShxyfLiV63_mk2TLYYBcSLeZVE
+
+###
 POST http://localhost:3000/auth/signin HTTP/1.1
 content-type: application/json
 
