@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  Logger,
   Param,
   ParseIntPipe,
   Patch,
@@ -22,10 +23,12 @@ import { GetUser } from 'src/auth/get-user.decorator';
 @Controller('boards')
 @UseGuards(AuthGuard())
 export class BoardsController {
+  private logger = new Logger('Boards');
   constructor(private boardsService: BoardsService) {}
 
   @Get()
   async getAllBoards(@GetUser() user: User): Promise<Board[]> {
+    this.logger.verbose(`User ${user.username} is trying to get all boards`);
     return this.boardsService.getAllBoards(user);
   }
 
@@ -37,15 +40,21 @@ export class BoardsController {
   @Post()
   @UsePipes(ValidationPipe)
   createBoard(
-    @Body() CreateBoardDto: CreateBoardDto,
+    @Body() createBoardDto: CreateBoardDto,
     @GetUser() user: User,
   ): Promise<Board> {
-    return this.boardsService.createBoard(CreateBoardDto, user);
+    this.logger.verbose(
+      `User ${user.username} is creating new board. Payload: ${JSON.stringify(createBoardDto)}`,
+    );
+    return this.boardsService.createBoard(createBoardDto, user);
   }
 
   @Delete(':id')
-  deleteBoard(@Param('id', ParseIntPipe) id: number): Promise<void> {
-    return this.boardsService.deleteBoard(id);
+  deleteBoard(
+    @Param('id', ParseIntPipe) id: number,
+    @GetUser() user: User,
+  ): Promise<void> {
+    return this.boardsService.deleteBoard(id, user);
   }
 
   @Patch(':id/status')
