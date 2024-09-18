@@ -5,3 +5,30 @@ content-type: application/json
     "title": "Board 1",
     "description": "Description 1"
 }
+
+###
+POST http://localhost:3000/boards HTTP/1.1
+content-type: application/json
+
+{
+    "title": "Board 2",
+    "description": "Description 2"
+}
+
+###
+POST http://localhost:3000/boards HTTP/1.1
+content-type: application/json
+
+{
+    "title": "",
+    "description": ""
+}
+
+###
+GET http://localhost:3000/boards
+
+###
+GET http://localhost:3000/boards/1
+
+###
+GET http://localhost:3000/boards/2
