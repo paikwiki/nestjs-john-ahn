@@ -1,6 +1,6 @@
 import { v1 as uuid } from 'uuid';
 import { Injectable, NotFoundException } from '@nestjs/common';
-import { Board, BoardStatus } from './board.modle';
+import { Board, BoardStatus } from './board.model';
 import { CreateBoardDto } from './dto/create-board.dto';
 
 @Injectable()

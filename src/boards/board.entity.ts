@@ -1,5 +1,5 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
-import { BoardStatus } from './board.modle';
+import { BoardStatus } from './board.model';
 
 @Entity()
 export class Board extends BaseEntity {
