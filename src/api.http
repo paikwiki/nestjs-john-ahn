@@ -1,10 +1,19 @@
 ###
+POST http://localhost:3000/auth/signin HTTP/1.1
+content-type: application/json
+
+{
+    "username": "chpaik2",
+    "password": "123456"
+}
+
+###
 POST http://localhost:3000/auth/signup HTTP/1.1
 content-type: application/json
 
 {
-    "username": "chpaik",
-    "password": "chpaik"
+    "username": "chpaik3",
+    "password": "123456"
 }
 
 ###
