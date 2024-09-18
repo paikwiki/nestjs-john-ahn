@@ -17,7 +17,7 @@ POST http://localhost:3000/auth/signup HTTP/1.1
 content-type: application/json
 
 {
-    "username": "chpaik3",
+    "username": "chpaik2",
     "password": "123456"
 }
 
@@ -51,14 +51,24 @@ content-type: application/json
 ###
 POST http://localhost:3000/boards HTTP/1.1
 content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocGFpazIiLCJpYXQiOjE3MjY2NjkwMjUsImV4cCI6MTcyNjY3MjYyNX0.LnHI9lgvoWjDAiQCAQOr56-RZiFw7CAg9XNgk846RkA
 
 {
-    "title": "Board 3",
-    "description": "Description 3"
+    "title": "Board 7 - by chpaik2",
+    "description": "Description 7"
 }
 
 ###
+# chpaik1
 GET http://localhost:3000/boards
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocGFpazEiLCJpYXQiOjE3MjY2Njg5NTgsImV4cCI6MTcyNjY3MjU1OH0.ca5ZDm2A3DEeefLplXPpijoXWtH5P_fPG4EsBjO1h5Y
+
+###
+# chpaik2
+GET http://localhost:3000/boards
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImNocGFpazIiLCJpYXQiOjE3MjY2NjkwMjUsImV4cCI6MTcyNjY3MjYyNX0.LnHI9lgvoWjDAiQCAQOr56-RZiFw7CAg9XNgk846RkA
 
 ###
 GET http://localhost:3000/boards/1
